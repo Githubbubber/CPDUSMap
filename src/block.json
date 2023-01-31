@@ -1,0 +1,17 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 1,
+    "name": "block/cpdusmap",
+    "version": "1.0.0",
+    "title": "CPD US Map",
+    "category": "widgets",
+    "icon": "site",
+    "description": "Static block for CPD US Map",
+    "supports": {
+        "html": false
+    },
+    "textdomain": "cpdusmap",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css"
+}

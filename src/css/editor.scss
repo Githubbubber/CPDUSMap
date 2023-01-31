@@ -1,0 +1,159 @@
+.affiliateMapContainer {
+    left: 80px;
+    position: relative;
+    width: 830px;
+}
+
+.hidePagesContainer {
+    visibility: hidden;
+}
+
+.infoAndPsMapRowContainer {
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    outline: 0;
+}
+
+.infoAndPsMapRowContainer .mapIconContainer {
+    display: block;
+    position: relative;
+    z-index: 5;
+}
+
+.infoAndPsMapRowContainer .asideAffiliates,
+.infoAndPsMapRowContainer .asideRegister,
+.infoAndPsMapRowContainer .asideRepresentatives,
+.infoAndPsMapRowContainer .asideVolunteer {
+    background: #fff;
+    border: 1px solid #d3d3d3;
+    border-radius: 6px;
+    filter: drop-shadow(rgba(0, 0, 0,
+
+                .25) 0 4px 4px);
+    margin-bottom: 10px;
+    padding: 4px 30px;
+}
+
+.infoAndPsMapRowContainer .asideAffiliates div:first-child,
+.infoAndPsMapRowContainer .asideRegister div:first-child,
+.infoAndPsMapRowContainer .asideRepresentatives div:first-child,
+.infoAndPsMapRowContainer .asideVolunteer div:first-child {
+    padding: 12px 6px;
+}
+
+.infoAndPsMapRowContainer .asideAffiliates img {
+    height: auto;
+    width: 50%;
+}
+
+@media screen and (max-width:650px) {
+    .infoAndPsMapRowContainer {
+        -webkit-margin-before: 1 .5rem;
+        border: none;
+        flex-direction: column;
+        margin-block-start: 1 .5rem;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        outline: 0;
+    }
+
+    .infoAndPsMapRowContainer .infoStatementContainer {
+        flex: 1;
+        height: 550px;
+        width: 550px;
+    }
+
+    .infoAndPsMapRowContainer .infoCardContainer {
+        background: transparent;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        z-index: 10;
+    }
+
+    .infoAndPsMapRowContainer .mapIconContainer {
+        display: none;
+    }
+}
+
+@media screen and (min-width:728px) {
+
+    .infoAndPsMapRowContainer .infoCardContainer,
+    .infoAndPsMapRowContainer .infoStatementContainer {
+        display: initial;
+        left: -40%;
+        padding: 10px;
+        position: absolute;
+        width: 300px;
+    }
+
+    .infoAndPsMapRowContainer .infoCardContainer {
+        background-color: #eee;
+        z-index: 10;
+    }
+}
+
+.infoAndPsMapRowContainer:active,
+.infoAndPsMapRowContainer:focus,
+.infoAndPsMapRowContainer:hover,
+.infoAndPsMapRowContainer:link,
+.infoAndPsMapRowContainer:visited {
+    border: none;
+    outline: 0;
+}
+
+.mapCheckIconStyling {
+    width: 20px;
+}
+
+.mapCheckText {
+    background-color: #fff;
+    border-radius: 2px;
+    color: #000;
+    padding: 1px 5px;
+}
+
+@media screen and (max-width:650px) {
+    .mapCheckText {
+        display: none;
+    }
+}
+
+.pageTurnerNext,
+.pageTurnerPrev {
+    height: 30px;
+    width: 30px;
+}
+
+.showPRState {
+    display: block;
+}
+
+@keyframes wobble {
+    25% {
+        transform: rotate(15deg);
+    }
+
+    50% {
+        transform: rotate(-30deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.divHolder {
+    display: block;
+    margin: 0 auto;
+}
+
+.divHolder[wobble="1"] {
+    animation: wobble 1s 1;
+}

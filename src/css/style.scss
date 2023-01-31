@@ -1,0 +1,106 @@
+/* 
+The following styles get applied both on the front of your site
+and in the editor.
+
+Replace them with your own styles or remove the file completely.
+
+*** COLORS ***
+Pop Democ Orange - #ffb423
+White - #ffffff
+Black - #000000
+
+Core Brand
+Cadmium Orange - #ff5200
+Tangerine - #ff9800
+Yellow - #ffbe00
+Cool blue - #091c46
+
+Expanded Palette
+Maroon - #5e0001
+Pink - #ea3c78
+Red - #eb383b
+Cerulean Blue - #49b8f9
+
+*** Font ***
+Headline typography - Alternate Gothic Condensed ATF
+Secondary typography - Maxx Bold, sans-serif
+*/
+#affiliate {
+    height: 400px;
+}
+
+#contents {
+    border: 1px solid green;
+}
+
+.closeAsideBtn {
+    border: 1px solid green;
+    font-size: large;
+}
+
+.cpd_react_block_div {
+    width: 1200px;
+    height: 200px;
+}
+
+.cpd_react_block_p {
+    color: red;
+}
+
+.entry-content .wp-block-cpd-us-map-styles div {
+    font-size: 13px;
+    padding: 0 0 1em;
+}
+
+.state {
+    background-color: #D0D0D0
+}
+
+.borders {
+    stroke: #FFFFFF;
+    stroke-width: 1
+}
+
+.dccircle {
+    display: inherit;
+}
+
+.separator {
+    color: #B0B0B0;
+}
+
+.affiliateLogo {
+    width: 100px;
+    height: 100px;
+}
+
+.accordionContainer,
+.pagesContainer,
+.tabsContainer {
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 300px;
+    height: 550px;
+    padding: 20px;
+}
+
+.accordionContainer {
+    display: initial;
+}
+
+.hidePagesContainer {
+    display: none;
+}
+
+.infoContainer {
+    background-color: #eee;
+    display: initial;
+    left: 5%;
+    padding: 20px;
+    position: absolute;
+    width: 200px;
+    z-index: 10;
+}
+
+.tabsContainer {
+    display: none;
+}
