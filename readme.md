@@ -12,8 +12,10 @@ This plugin adds a widget of a US map to the blocks available for each page. Thi
 
 1. Upload the plugin files to the `/wp-content/plugins/cpdusmap` directory, or install the plugin through the WordPress plugins screen directly.
 2. Add required constants to wp-config.php: TEST_REMOTE_ADDR, IPINFO_TOKEN, GEOLITE2_ACCOUNT_ID, GEOLITE2_LICENSE_KEY, CIVICINFO_API_KEY
-3. Activate the plugin through the 'Plugins' screen in WordPress
-4. Use the 'Add Block' button to add the CPD US Map block to a page or post.
+3. Run `npm install`
+4. Run `npm run dev` for local testing or `npm run build` for prod version
+5. Activate the plugin through the 'Plugins' screen in WordPress
+6. Use the 'Add Block' button to add the `CPD US Map` block to a page or post.
 
 ## Clarifying Questions
 
