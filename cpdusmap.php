@@ -42,28 +42,6 @@ if (!class_exists('VoterInfoClass')) {
 // Form the block, with js/css files.
 function register_and_enqueue_cpd_block_assets()
 {
-	// Test VoterInfoClass and LocationClass method outputs
-	$location = new LocationClass();
-	$current_location = $location->getUserLocation("130.185.153.196");
-
-	$voter_info = new VoterInfoClass();
-
-	echo "<pre>";
-	print_r($current_location);
-	echo "-----";
-	print_r($voter_info->getElectionQueryInfo());
-	echo "-----";
-	// print_r($voter_info->getVoterInfoQueryInfo());
-	// echo "-----";
-	// print_r($voter_info->getRepresentativeInfoByAddress());
-	// echo "-----";
-	// print_r($voter_info->getRepresentativeInfoByDivision());
-	// echo "-----";
-	// print_r($voter_info->getSearchInfo());
-	echo "</pre>";
-
-	exit;
-
 	$cpd_nonce = wp_create_nonce("use_a_cpd_block");
 	$index_js = plugins_url('build/index.js', __FILE__);
 
