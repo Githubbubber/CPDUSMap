@@ -1,9 +1,11 @@
 export const MapCheckIcon = ({ count }) => {
+	console.log(wp.media, "wp.media");
+
 	return <p className="mapCheckText">
 		<img
 			className="mapCheckIconStyling"
 			alt={`${count} Affiliates`}
-			src="http://localhost/cpd/wp-content/uploads/2022/12/map-check-icon_white.png"
+			src={main_site_url + "/wp-content/uploads/map-check-icon_white.png"}
 		/>
 		&nbsp; {count} Affiliates
 	</p>;

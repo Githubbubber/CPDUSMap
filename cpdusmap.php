@@ -18,7 +18,7 @@ if (!defined('ABSPATH')) {
 	exit;
 }
 
-// The main class.
+// The main classes.
 if (!class_exists('AffiliatesClass')) {
 	include_once dirname(__FILE__) . '/includes/AffiliatesClass.php';
 }
@@ -31,9 +31,39 @@ if (!class_exists('AffiliatesAdministration')) {
 	include_once dirname(__FILE__) . "/includes/AffiliatesAdministration.php";
 }
 
+if (!class_exists('LocationClass')) {
+	include_once dirname(__FILE__) . '/includes/LocationClass.php';
+}
+
+if (!class_exists('VoterInfoClass')) {
+	include_once dirname(__FILE__) . '/includes/VoterInfoClass.php';
+}
+
 // Form the block, with js/css files.
 function register_and_enqueue_cpd_block_assets()
 {
+	// Test VoterInfoClass and LocationClass method outputs
+	$location = new LocationClass();
+	$current_location = $location->getUserLocation("130.185.153.196");
+
+	$voter_info = new VoterInfoClass();
+
+	echo "<pre>";
+	print_r($current_location);
+	echo "-----";
+	print_r($voter_info->getElectionQueryInfo());
+	echo "-----";
+	// print_r($voter_info->getVoterInfoQueryInfo());
+	// echo "-----";
+	// print_r($voter_info->getRepresentativeInfoByAddress());
+	// echo "-----";
+	// print_r($voter_info->getRepresentativeInfoByDivision());
+	// echo "-----";
+	// print_r($voter_info->getSearchInfo());
+	echo "</pre>";
+
+	exit;
+
 	$cpd_nonce = wp_create_nonce("use_a_cpd_block");
 	$index_js = plugins_url('build/index.js', __FILE__);
 
@@ -65,7 +95,7 @@ function register_and_enqueue_cpd_block_assets()
 		'cpdusmap_values',
 		array(
 			"cpd_nonce" => $cpd_nonce,
-			"site_url" => get_site_url(),
+			"main_site_url" => get_site_url(),
 			"pCountInCurrentState" => $p_count_in_current_state,
 			"totalPCountsByState" => $all_p_state_counts,
 			"allAffiliates" => $all_affiliates,

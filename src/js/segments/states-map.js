@@ -7,7 +7,7 @@ import { faCircleChevronLeft, faCircleChevronRight } from "@fortawesome/free-sol
 import getData from "../data/all-data.js";
 import puertoRicoData from "../data/puerto-rico-data.json";
 import { PuertoRicoDValue, PuertoRicoDValueLG } from "../paths/puerto-rico";
-import * as styles from "../../css/editor.scss";
+import * as styles from "../../css/editor.css";
 
 /**
  * @returns {Node} StatesMap
@@ -41,6 +41,7 @@ export default class StatesMap extends Component {
         this.totalPCountsByState = cpdusmap_values.totalPCountsByState;
         this.visitorStateAbbr = cpdusmap_values.currentStateArray.abbr;
         this.visitorStateName = cpdusmap_values.currentStateArray.state;
+        this.mainSiteURL = cpdusmap_values.main_site_url;
 
         this.width = this.screenWidth < 651 ? 550 : 930;
         this.height = this.screenWidth < 651 ? 550 : 630;
@@ -183,7 +184,6 @@ export default class StatesMap extends Component {
 
         this.setNewAffiliateContents(selectedState, allAffiliates[selectedState][pageNumber]);
     }
-
     componentDidMount() {
         const { pContainerRef } = this;
 
@@ -249,6 +249,15 @@ export default class StatesMap extends Component {
                 this.setState({ showAside: true, selectedState: selectedState });
 
                 this.asideStuff(selectedState);
+
+                //Send location info to the backend
+                axios.post("/api/location", { location: selectedState })
+                    .then(res => {
+                        console.log(res);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
             } else {
                 reset();
 
@@ -306,9 +315,9 @@ export default class StatesMap extends Component {
                 const coordValues = d3.pointer(event, cpdSVG.node());
 
                 let xC = Math.abs(Math.round(coordValues[0]));
-                xC = xC > xBounds ? xC - 175 : xC;
+                xC = xC > xBounds ? xC - 75 : xC;
                 let yC = Math.abs(Math.round(coordValues[1]));
-                yC = yC > yBounds ? yC - 175 : yC;
+                yC = yC > yBounds ? yC - 75 : yC;
                 let count = this.totalPCountsByState[classValue];
                 count = count > 1 ? `${count} Affiliates` : "1 Affiliate";
 
@@ -319,7 +328,7 @@ export default class StatesMap extends Component {
                 const iconImg = d3.create("img")
                     .attr("class", "mapCheckIconStyling")
                     .attr("alt", count)
-                    .attr("src", site_url + "/wp-content/uploads/2022/12/map-check-icon_white.png"); // TODO: Check
+                    .attr("src", this.mainSiteURL + "/wp-content/uploads/map-check-icon_white.png");
 
                 const iconSpan = d3.create("span")
                     .text(count);
